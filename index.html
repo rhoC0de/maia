@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Welcome to Maia</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The Maia Application Interface" />
+    <meta name="keywords" content="HTML, CSS, XML, JavaScript">
+    <meta name="author" content="Maia" />
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+
+
+</head>
+
+<body>
+    <div class="container">
+
+        <section class='header' id="myHeader">
+            <div id="topnav">
+                <div id="mySidebar" class="sidebar">
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+                    <a href="index.html">Home</a>
+                    <a href="html/profile.html">Profile</a>
+                    <a href="html/catalogue.html">Catalogue</a>
+                    <a href="html/notifications.html">Notifications</a>
+                    <a href="#">Logout</a>
+                </div>
+                <div id="main">
+                    <button class="openbtn" onclick="openNav()">☰ </button>
+                    <span> <img src="images/logo white.png"> </span>
+                </div>
+            </div>
+
+            <div id="bottomnav">
+
+                <button class="tablink" onclick="openPage('Referrals', this, 'white')"
+                    id="defaultOpen">Referrals</button>
+                <button class="tablink" onclick="openPage('Customers', this, 'white')">Customers</button>
+            </div>
+        </section>
+
+        <div id="Referrals" class="tabcontent">
+                <h4>New Referrals</h4>
+<!-- Add Notifications -->
+<div class="alert">
+        <p>This is an alert box.<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+        </p>
+      </div>
+
+      <!-- Top Referrals -->
+            <h4>Top Referrals</h4>
+            <div class="referralcontent"></div>
+        </div>
+
+        <div id="Customers" class="tabcontent">
+
+            <!--Customers info starts here-->
+            <div>
+                <input type="text" id="myInput" onkeyup="myCustomers()" placeholder="Search for names.."
+                    title="Type in a name">
+
+                <ul id="myUL">
+                    <li><a href="customer.html">Adele Calvin
+                            <p class="referedBy">Refered by: Wilson Goa</p>
+                        </a> </li>
+
+                    <li><a href="customer.html">Agnes Christina
+                            <p class="referedBy">Refered by: Wilson Goa</p>
+                        </a></li>
+
+                    <li><a href="customer.html">Bob Christina
+                            <p class="referedBy">Refered by: Wilson Goa</p>
+                        </a></li>
+
+                    <li><a href="customer.html">Christina Billy
+                            <p class="referedBy">Refered by: Wilson Goa</p>
+                        </a></li>
+                    <li><a href="customer.html">Cindy Billy
+                            <p class="referedBy">Refered by: Wilson Goa</p>
+                        </a></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    </div>
+
+    <!-- All html codes should above this line -->
+    <script src="./js/dummy.js"></script>
+    <script>
+        /*script for topnav dropdown menu*/
+
+
+        function openNav() {
+            document.getElementById("mySidebar").style.width = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidebar").style.width = "0px";
+        }
+
+        /*Scripts for bottomnav*/
+        function openPage(pageName, elmnt, color) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablink");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].style.backgroundColor = "";
+            }
+            document.getElementById(pageName).style.display = "block";
+            elmnt.style.backgroundColor = color;
+        }
+        // Get the element with id="defaultOpen" and click on it
+        document.getElementById("defaultOpen").click();
+
+        //Script for phonebook list and its search function
+        function myCustomers() {
+            var input, filter, ul, li, a, i, txtValue;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            ul = document.getElementById("myUL");
+            li = ul.getElementsByTagName("li");
+            for (i = 0; i < li.length; i++) {
+                a = li[i].getElementsByTagName("a")[0];
+                txtValue = a.textContent || a.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    li[i].style.display = "";
+                } else {
+                    li[i].style.display = "none";
+                }
+            }
+        }
+
+        window.onscroll = function () { myFunction() };
+
+        var header = document.getElementById("myHeader");
+        var sticky = header.offsetTop;
+
+        function myFunction() {
+            if (window.pageYOffset > sticky) {
+                header.classList.add("sticky");
+            } else {
+                header.classList.remove("sticky");
+            }
+        }
+
+        //   Scripts for notification alerts bar
+            // Get all elements with class="closebtn"
+var close = document.getElementsByClassName("closebtn");
+var i;
+
+// Loop through all close buttons
+for (i = 0; i < close.length; i++) {
+  // When someone clicks on a close button
+  close[i].onclick = function(){
+
+    // Get the parent of <span class="closebtn"> (<div class="alert">)
+    var div = this.parentElement;
+
+    // Set the opacity of div to 0 (transparent)
+    div.style.opacity = "0";
+
+    // Hide the div after 600ms (the same amount of milliseconds it takes to fade out)
+    setTimeout(function(){ div.style.display = "none"; }, 600);
+  }
+}
+
+    </script>
+</body>
+
+</html>

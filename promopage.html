@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Login</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="The Maia Application Interface" />
+  <meta name="keywords" content="HTML, CSS, XML, JavaScript">
+  <meta name="author" content="Maia" />
+  <link rel="stylesheet" type="text/css" href="css/ppage.css"/>
+
+</head>
+
+<body>
+  <div id="container">
+
+    <div id="intro">
+        <div> </div>
+        <p><img src="images/promopic.png" alt="promotion picture"></p>
+        <h4>Your friend or family just referred you! <br>Get up to 10% discount on items in this catalogue</h>
+    </div>
+
+    <section>
+      <form action="/action_page.php">
+        <label for="name">What item would you like to buy?</label>
+        <select name="cars">
+                <option value="volvo">Volvo</option>
+                <option value="saab">Saab</option>
+                <option value="fiat">Fiat</option>
+                <option value="audi">Audi</option>
+              </select>
+
+        <label for="name">Full name:</label>
+        <input type="text" name="name" placeholder="eg. Ms. Tolani Ojo">
+        <label for="phone">Whatsapp number:</label>
+        <input type="tel" name="phone" placeholder="+2348079083066">
+
+        <input type="submit" value="Grab this offer" class="submitbtn">
+      </form>
+
+      <div class="below-form">
+      <a href="#">Powered by Maia</a>
+      </div>
+    </section>
+  </div>
+</body>
+
+</html>

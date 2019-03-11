@@ -1,0 +1,31 @@
+/* mobile container frame */
+
+* {
+    margin: 0;
+    padding: 0;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+#container {
+    padding: 5% 5%;
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(26, 188, 156);
+}
+
+input {
+    width: 100%;
+    padding: 10px 10px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid rgb(26, 188, 156);
+    border-radius: 4px;
+}

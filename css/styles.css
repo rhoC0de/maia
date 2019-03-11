@@ -1,0 +1,239 @@
+/* mobile container frame */
+
+* {
+    margin: 0;
+    padding: 0;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 100%;
+}
+
+.container {
+    display: block;
+    max-width: 100vw;
+    height: 100vh;
+}
+
+#topnav {
+    max-width: 100%;
+    color: #fff;
+    background-color: #1abc9c;
+    padding: 12px 10px;
+    height: 10%;
+}
+
+#main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#topnav img {
+    max-width: 25%;
+    float: right;
+    position: relative;
+    margin-right: 5px;
+}
+
+/*Style topnav dropdown menu */
+
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #808080;
+    overflow-x: auto;
+    transition: 0.5s;
+    padding-top: 50px;
+}
+
+.sidebar a {
+    padding: 10px 10px 10px 32px;
+    text-decoration: none;
+    font-size: 16px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    color: #1abc9c;
+}
+
+.sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 2em;
+}
+
+.openbtn {
+    font-size: 24px;
+    cursor: pointer;
+    background-color: #1abc9c;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    /* margin-right: 20px; */
+}
+
+/* #main {
+  transition: margin-left .5s;
+  padding: 16px;
+} */
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+
+@media screen and (max-height: 450px) {
+    .sidebar {
+        padding-top: 15px;
+    }
+    .sidebar a {
+        font-size: 14px;
+    }
+}
+
+/* Styling bottomnav */
+
+.tablink {
+    position: relative;
+    background-color: #1abc9c;
+    color: black;
+    float: left;
+    border: none;
+    border-bottom: 2px solid gray;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    font-size: 16px;
+    width: 50%;
+    height: 8%;
+}
+
+.tablink:hover {
+    background-color: #777;
+}
+
+/* Style the tab content (and add height:100% for full page content) */
+
+.tabcontent {
+    color: black;
+    display: none;
+    padding: 50px 20px;
+    height: 100%;
+    /* overflow: scroll; */
+}
+
+.referralcontent {
+    display: block;
+    /* color: red; */
+}
+
+.referralcontent table {
+    width: 100%;
+}
+
+table {
+    /* font-family: arial, sans-serif; */
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 14px;
+}
+
+td,th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+/* The sticky class is added to the header with JS when it reaches its scroll position */
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%
+}
+
+/*Styling customers database content*/
+
+#myInput {
+    background-position: 10px 12px;
+    background-repeat: no-repeat;
+    width: 100%;
+    font-size: 14px;
+    padding: 12px 20px 12px 40px;
+    border: 1px solid #ddd;
+    margin-bottom: 12px;
+    margin-top: 6px;
+}
+
+#myUL {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    /* overflow: auto; */
+}
+
+#myUL .referedBy {
+    font-size: 12px;
+    padding: 0;
+    margin-top: 6px;
+    line-height: 0;
+    color: gray;
+}
+
+#myUL li a {
+    border: 1px solid #ddd;
+    /* Prevent double borders */
+    margin-top: -1px;
+    background-color: #f6f6f6;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 14px;
+    color: black;
+    display: block;
+}
+
+#myUL li a:hover:not(.header) {
+    background-color: #eee;
+}
+
+/* Styling Notifications */
+/* The alert message box */
+.alert {
+    padding: 20px;
+    background-color: #1abc9c; 
+    color: white;
+    margin: 15px 10px;
+    opacity: 1;
+  transition: opacity 0.6s; /* 600ms to fade out */
+  }
+  
+  /* The close button */
+  .closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  /* When moving the mouse over the close button */
+  .closebtn:hover {
+    color: black;
+  }

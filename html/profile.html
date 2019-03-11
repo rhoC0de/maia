@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Welcome to Maia</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The Maia Application Interface" />
+    <meta name="keywords" content="HTML, CSS, XML, JavaScript">
+    <meta name="author" content="Maia" />
+    <link rel="stylesheet" type="text/css" href="../css/profile.css" />
+
+
+</head>
+
+<body>
+    <div class="container">
+
+        <section class='header' id="myHeader">
+            <div id="topnav">
+                <div id="mySidebar" class="sidebar">
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+                    <a href="../index.html">Home</a>
+                    <a href="profile.html">Profile</a>
+                    <a href="catalogue.html">Catalogue</a>
+                    <a href="notifications.html">Notifications</a>
+                    <a href="#">Logout</a>
+                </div>
+                <div id="main">
+                    <button class="openbtn" onclick="openNav()">☰ </button>
+                    <span> <img src="../images/logo white.png"> </span>
+                </div>
+            </div>
+        </section>
+
+        <section id="businessInfo">
+                <form id="testform" action="#" onsubmit="return false;">
+                        <p>Business Profile </p>
+                          <input name="bname" id="bname" type="text" placeholder="Business name"> 
+                          <input name="email" type="email" placeholder="Email"> 
+                          <input name="phone" id="phone" type="tel" placeholder="Whatsapp Phone Number"> 
+                          <input name="fbhandle" type="text" placeholder="Facebook handle"> 
+                          <input name="ighandle" type="text" placeholder="Instagram handle"> 
+                          <input name="thandle" type="text" placeholder="Twitter handle"> 
+                        </form>
+
+                        <p><button id="generate" type="button">Referral link</button> <a href="#"><code id="output"></code> </a></p>
+            <div style="text-align:center">
+                <button type="submit" onclick="enableform('testform');">
+                    Edit</button>
+                <button type="submit" onclick="disableform('testform');">
+                    Save</button>
+            </div>
+    </section>
+
+    <!-- Add all html code above this line -->
+    <script>
+        /*script for topnav dropdown menu*/
+
+
+        function openNav() {
+            document.getElementById("mySidebar").style.width = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidebar").style.width = "0px";
+        }
+
+        // script for edit & save buttons
+        function disableform(formId) {
+            var f = document.forms[formId].getElementsByTagName('input');
+            for (var i = 0; i < f.length; i++)
+                f[i].disabled = true
+            var f = document.forms[0].getElementsByTagName('textarea');
+            for (var i = 0; i < f.length; i++)
+                f[i].disabled = true
+        }
+
+        function enableform(formId) {
+            var f = document.forms[formId].getElementsByTagName('input');
+            for (var i = 0; i < f.length; i++)
+                f[i].disabled = false
+            var f = document.forms[0].getElementsByTagName('textarea');
+            for (var i = 0; i < f.length; i++)
+                f[i].disabled = false
+        }
+
+         // script for generating unique link
+         function IDGenerator() {
+            const maia = "maia";
+            var firstName = document.getElementById("bname").value;
+            var phoneDigit = document.getElementById("phone").value;
+            phoneDigitstring = phoneDigit.toString();
+            slicephone = phoneDigitstring.slice(-4);
+
+            uniqueID = maia + '//' + firstName + "/" + slicephone;
+            console.log(uniqueID);
+            return uniqueID;
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            var btn = document.querySelector("#generate"),
+                output = document.querySelector("#output");
+
+            btn.addEventListener("click", function () {
+                output.innerHTML = IDGenerator();
+            }, false);
+
+        });
+    </script>
+</body>
+
+</html>

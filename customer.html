@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Welcome to Maia</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The Maia Application Interface" />
+    <meta name="keywords" content="HTML, CSS, XML, JavaScript">
+    <meta name="author" content="Maia" />
+    <link rel="stylesheet" type="text/css" href="css/profile.css" />
+
+
+</head>
+
+<body>
+    <div class="container">
+
+        <section class='header' id="myHeader">
+            <div id="topnav">
+                <div id="mySidebar" class="sidebar">
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+                    <a href="index.html">Home</a>
+                    <a href="html/profile.html">Profile</a>
+                    <a href="html/catalogue.html">Catalogue</a>
+                    <a href="html/notifications.html">Notifications</a>
+                    <a href="#">Logout</a>
+                </div>
+                <div id="main">
+                    <button class="openbtn" onclick="openNav()">☰ </button>
+                    <span> <img src="images/logo white.png"> </span>
+                </div>
+            </div>
+
+        </section>
+
+        <section id="customerInfo">
+            <form id="testform" action="#" onsubmit="return false;">
+                <div class="details">
+                    <a href="index.html"><button type="button" style="float:left;">
+                            Back</button> </a>
+                    <p>Customer Details </p>
+                </div>
+                <input type="text" id="fname" name="firstname" placeholder="First name..">
+                <input type="text" id="lname" name="lastname" placeholder="Last name..">
+                <input type="tel" id="phone" name="phone" placeholder="Phone number..">
+                <input name="referedBy" type="text" placeholder="Referred by..">
+                <!-- 
+                <label for="purchase">Purchase</label>
+                <input name="purchase" type="text" placeholder="Purchase on referral">
+                <input name="reward" type="text" placeholder="Reward"> -->
+            </form>
+
+            <p><button id="generate" type="button">Referral link</button> <a href="#"><code id="output"></code> </a></p>
+
+            <div style="text-align:center">
+                <button type="submit" onclick="enableform('testform');">
+                    Edit</button>
+                <button type="submit" onclick="disableform('testform');">
+                    Save</button>
+            </div>
+        </section>
+
+    </div>
+
+
+    <!-- Add all html code above this line -->
+    <script>
+        /*script for topnav dropdown menu*/
+
+
+        function openNav() {
+            document.getElementById("mySidebar").style.width = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidebar").style.width = "0px";
+        }
+
+        // script for edit & save buttons
+        function disableform(formId) {
+            var f = document.forms[formId].getElementsByTagName('input');
+            for (var i = 0; i < f.length; i++)
+                f[i].disabled = true
+            var f = document.forms[0].getElementsByTagName('textarea');
+            for (var i = 0; i < f.length; i++)
+                f[i].disabled = true
+        }
+
+        function enableform(formId) {
+            var f = document.forms[formId].getElementsByTagName('input');
+            for (var i = 0; i < f.length; i++)
+                f[i].disabled = false
+            var f = document.forms[0].getElementsByTagName('textarea');
+            for (var i = 0; i < f.length; i++)
+                f[i].disabled = false
+        }
+
+        // script for generating unique link
+        function IDGenerator() {
+            const maia = "maia";
+            var firstName = document.getElementById("fname").value;
+            var phoneDigit = document.getElementById("phone").value;
+            phoneDigitstring = phoneDigit.toString();
+            slicephone = phoneDigitstring.slice(-4);
+
+            uniqueID = maia + '//' + firstName + "/" + slicephone;
+            console.log(uniqueID);
+            return uniqueID;
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            var btn = document.querySelector("#generate"),
+                output = document.querySelector("#output");
+
+            btn.addEventListener("click", function () {
+                output.innerHTML = IDGenerator();
+            }, false);
+
+        });
+
+    </script>
+    </script>
+</body>
+
+</html>

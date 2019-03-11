@@ -1,0 +1,119 @@
+/* mobile container frame */
+
+* {
+    margin: 0;
+    padding: 0;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+#container {
+    padding: 5% 5%;
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(26, 188, 156);
+}
+
+#intro {
+    color: white;
+    text-align: center;
+    margin-top: 6px;
+}
+
+#intro img {
+    max-width: 30%;
+}
+
+
+input {
+    width: 100%;
+    padding: 10px 10px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid rgb(26, 188, 156);
+    border-radius: 4px;
+}
+
+p {
+    font-weight: 100;
+}
+
+h4,
+label {
+    color: white;
+}
+
+label {
+    padding: 10px 10px 0px 0;
+    display: block;
+}
+
+input[type=submit] {
+    background-color: rgb(26, 188, 156);
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    border: 2px solid white;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 5%;
+}
+
+input:focus {
+    border: 2px solid gray;
+}
+
+input[type=submit]:hover {
+    background-color: rgb(17, 99, 82);
+    color: white;
+}
+
+/* add appropriate colors to fb, twitter and google buttons */
+
+.socialmedia a {
+    border-radius: 3px;
+    padding: 6px 15px;
+    margin: 8px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.fb {
+    background-color: #3B5998;
+    color: white;
+}
+
+.twitter {
+    background-color: #55ACEE;
+    color: white;
+}
+
+.google {
+    background-color: #dd4b39;
+    color: white;
+}
+
+/* after social media */
+
+.socialmedia,
+p {
+    margin: 10px 0;
+}
+
+.below-form {
+    color: white;
+    font-size: 14px;
+    line-height: 30px;
+    text-align: center;
+}
+
+a:hover {
+    color: brown;
+}
