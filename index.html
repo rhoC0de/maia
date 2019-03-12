@@ -34,21 +34,23 @@
 
             <div id="bottomnav">
 
-                <button class="tablink" onclick="openPage('Referrals', this, 'white')"
-                    id="defaultOpen">Referrals</button>
-                <button class="tablink" onclick="openPage('Customers', this, 'white')">Customers</button>
+                <button class="tablink" onclick="openPage('Referrals', this, 'white')">Referrals</button>
+                <button class="tablink" onclick="openPage('Customers', this, 'white')"
+                    id="defaultOpen">Customers</button>
             </div>
         </section>
 
         <div id="Referrals" class="tabcontent">
-                <h4>New Referrals</h4>
-<!-- Add Notifications -->
-<div class="alert">
-        <p>This is an alert box.<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
-        </p>
-      </div>
+            <h4>New Referrals</h4>
+            <!-- Add Notifications -->
+            <div class="alert">
+                <p>Bob Christina ordered Pure Coconut Oil @$12 (Free delivery in Lagos). <br> Contact
+                    at <a href="#">+2348079083066</a> <button class="closebtn"
+                        onclick="this.parentElement.style.display='none';">Confirm</button>
+                </p>
+            </div>
 
-      <!-- Top Referrals -->
+            <!-- Top Referrals -->
             <h4>Top Referrals</h4>
             <div class="referralcontent"></div>
         </div>
@@ -66,20 +68,22 @@
                         </a> </li>
 
                     <li><a href="customer.html">Agnes Christina
-                            <p class="referedBy">Refered by: Wilson Goa</p>
-                        </a></li>
-
-                    <li><a href="customer.html">Bob Christina
-                            <p class="referedBy">Refered by: Wilson Goa</p>
+                            <p class="referedBy">Refered by: Christina Billy</p>
                         </a></li>
 
                     <li><a href="customer.html">Christina Billy
-                            <p class="referedBy">Refered by: Wilson Goa</p>
+                            <p class="referedBy">Refered by: Adele Calvin</p>
                         </a></li>
                     <li><a href="customer.html">Cindy Billy
-                            <p class="referedBy">Refered by: Wilson Goa</p>
+                            <p class="referedBy">Refered by: Christina Billy</p>
+                        </a></li>
+
+                    <li><a href="customer.html">Bob Christina
+                            <p class="referedBy">Refered by: Adele Calvin</p>
                         </a></li>
                 </ul>
+
+                <button class="button5">+</button>
             </div>
 
         </div>
@@ -136,6 +140,7 @@
             }
         }
 
+        // Script for scrolling
         window.onscroll = function () { myFunction() };
 
         var header = document.getElementById("myHeader");
@@ -150,25 +155,25 @@
         }
 
         //   Scripts for notification alerts bar
-            // Get all elements with class="closebtn"
-var close = document.getElementsByClassName("closebtn");
-var i;
+        // Get all elements with class="closebtn"
+        var close = document.getElementsByClassName("closebtn");
+        var i;
 
-// Loop through all close buttons
-for (i = 0; i < close.length; i++) {
-  // When someone clicks on a close button
-  close[i].onclick = function(){
+        // Loop through all close buttons
+        for (i = 0; i < close.length; i++) {
+            // When someone clicks on a close button
+            close[i].onclick = function () {
 
-    // Get the parent of <span class="closebtn"> (<div class="alert">)
-    var div = this.parentElement;
+                // Get the parent of <span class="closebtn"> (<div class="alert">)
+                var div = this.parentElement;
 
-    // Set the opacity of div to 0 (transparent)
-    div.style.opacity = "0";
+                // Set the opacity of div to 0 (transparent)
+                div.style.opacity = "0";
 
-    // Hide the div after 600ms (the same amount of milliseconds it takes to fade out)
-    setTimeout(function(){ div.style.display = "none"; }, 600);
-  }
-}
+                // Hide the div after 600ms (the same amount of milliseconds it takes to fade out)
+                setTimeout(function () { div.style.display = "none"; }, 600);
+            }
+        }
 
     </script>
 </body>

@@ -1,20 +1,17 @@
 const referralList = [
     {
-        name: 'Chidi',
-        referral: 2,
+        name: 'Adele Calvin',
+        referral: 1,
     },
     {
-        name: 'Mubarak',
+        name: 'Cindy Billy',
         referral: 3,
     },
     {
-        name: 'Ore',
+        name: 'Wilson Goa',
         referral: 4,
     },
-    {
-        name: 'Yannick',
-        referral: 1,
-    },
+    
 ]
 
 const refCont = document.querySelector('.referralcontent');

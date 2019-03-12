@@ -3,13 +3,14 @@
 
 <head>
     <meta charset="UTF-8" />
-    <title>Welcome to Maia</title>
+    <title>Catalogue</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="The Maia Application Interface" />
     <meta name="keywords" content="HTML, CSS, XML, JavaScript">
     <meta name="author" content="Maia" />
-    <link rel="stylesheet" type="text/css" href="../css/profile.css" />
-
+    <link rel="stylesheet" type="text/css" href="../css/catalogue.css" />
+    <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase-firestore.js"></script>
 
 </head>
 
@@ -24,7 +25,7 @@
                     <a href="profile.html">Profile</a>
                     <a href="catalogue.html">Catalogue</a>
                     <a href="notifications.html">Notifications</a>
-                    <a href="#">Logout</a>
+                    <a href="../html/login.html">Logout</a>
                 </div>
                 <div id="main">
                     <button class="openbtn" onclick="openNav()">☰ </button>
@@ -32,7 +33,39 @@
                 </div>
             </div>
         </section>
+
+        <div class="content">
+
+                <form id="add-product-form"> 
+                    <input type="text" name="productname" placeholder="Product Description">
+                    <input type="text" name="discount" placeholder="Discount">
+                    <button>Add product</button>
+                </form>
+    
+                <ul id="product-list"></ul>
+    
+            </div>
     </div>
+
+
+<!-- Adding Firebase -->
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBJscvr64967ykzY2biR5Vn9U-Tob-6ZQY",
+    authDomain: "catalogue-904fc.firebaseapp.com",
+    databaseURL: "https://catalogue-904fc.firebaseio.com",
+    projectId: "catalogue-904fc",
+    storageBucket: "catalogue-904fc.appspot.com",
+    messagingSenderId: "321671902510"
+  };
+  firebase.initializeApp(config);
+  const db = firebase.firestore();
+  db.settings({timestampsInSnapshots: true});
+
+</script>
+
+<script src="../js/catalogue.js"></script>
 
      <!-- Add all html code above this line -->
      <script>

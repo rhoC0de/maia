@@ -24,11 +24,96 @@ body {
     width: 100%;
     height: auto;
 }
+
+h4{
+    font-size: 30px;
+    font-weight: 600;
+}
+
+label{
+    font-size: 28px;
+}
+
 select, input {
     width: 100%;
     padding: 10px 10px;
     margin: 8px 0;
     box-sizing: border-box;
-    border: 2px solid rgb(26, 188, 156);
+    border: 2px solid #1abc9c;
     border-radius: 4px;
+    font-size: 24px;
+}
+
+/* Styling Modal Message & btn */
+input[type=submit] {
+    background-color: #1abc9c;
+    color: #ffffff;
+    font-size: 24px;
+    padding: 5px 0px 5px 0px; 
+}
+
+input[type=submit]:hover {
+    background-color: rgb(17, 99, 82);
+    color: white;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    color: rgb(17, 99, 82);
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+
+@media screen and (max-width: 450px) {
+label{
+    font-size: 14px; 
+}
+select, input {
+    font-size: 12px;
+}
+h4{
+    font-size: 16px;
+    font-weight: 500;
+}
+input[type=submit] {
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px 0 10px 0;
+}
+.below-form{
+    font-size: 11px;
+}
 }

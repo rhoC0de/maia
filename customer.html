@@ -37,21 +37,21 @@
         <section id="customerInfo">
             <form id="testform" action="#" onsubmit="return false;">
                 <div class="details">
-                    <a href="index.html"><button type="button" style="float:left;">
+                    <a href="index.html#customerOpen"><button type="button" style="float:left;">
                             Back</button> </a>
                     <p>Customer Details </p>
                 </div>
-                <input type="text" id="fname" name="firstname" placeholder="First name..">
-                <input type="text" id="lname" name="lastname" placeholder="Last name..">
-                <input type="tel" id="phone" name="phone" placeholder="Phone number..">
-                <input name="referedBy" type="text" placeholder="Referred by..">
+                <input type="text" id="fname" name="firstname" placeholder="First name.." value="Adele">
+                <input type="text" id="lname" name="lastname" placeholder="Last name.." value="Calvin">
+                <input type="tel" id="phone" name="phone" placeholder="Phone number.." value="+233501692344">
+                <input name="referedBy" type="text" placeholder="Referred by.." value="Wilson Goa">
                 <!-- 
                 <label for="purchase">Purchase</label>
                 <input name="purchase" type="text" placeholder="Purchase on referral">
                 <input name="reward" type="text" placeholder="Reward"> -->
             </form>
 
-            <p><button id="generate" type="button">Referral link</button> <a href="#"><code id="output"></code> </a></p>
+            <p><button id="generate" type="button">Referral link</button> <a href="promopage.html"><code id="output"></code> </a></p>
 
             <div style="text-align:center">
                 <button type="submit" onclick="enableform('testform');">
