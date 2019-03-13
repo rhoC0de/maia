@@ -49,10 +49,9 @@
 
                     <button class="closebtn"
                         onclick="this.parentElement.style.display='none';">Confirm</button>
-                    <!-- <span class="popuptext" id="myPopup">New customer added!</span> -->
 
                 </p>
-
+                <span id="myAlert" style="display:none;">New customer added !!</span>
             </div>
 
             <!-- Top Referrals -->
@@ -174,6 +173,9 @@
 
                 // Set the opacity of div to 0 (transparent)
                 div.style.opacity = "0";
+                var popup = document.getElementById("myAlert");
+                // popup.toggle("show");
+                popup.removeAttribute("style");
 
                 // Hide the div after 600ms (the same amount of milliseconds it takes to fade out)
                 setTimeout(function () { div.style.display = "none"; }, 600);
