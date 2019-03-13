@@ -45,9 +45,14 @@
             <!-- Add Notifications -->
             <div class="alert">
                 <p>Bob Christina ordered Pure Coconut Oil @$12 (Free delivery in Lagos). <br> Contact
-                    at <a href="#">+2348079083066</a> <button class="closebtn"
+                    at <a href="#">+2348079083066</a>
+
+                    <button class="closebtn"
                         onclick="this.parentElement.style.display='none';">Confirm</button>
+                    <!-- <span class="popuptext" id="myPopup">New customer added!</span> -->
+
                 </p>
+
             </div>
 
             <!-- Top Referrals -->
@@ -172,10 +177,17 @@
 
                 // Hide the div after 600ms (the same amount of milliseconds it takes to fade out)
                 setTimeout(function () { div.style.display = "none"; }, 600);
+                
             }
         }
 
+        // When the user clicks on <div>, open the popup
+        //     function popFunction() {
+        //   var popup = document.getElementById("myPopup");
+        //   popup.classList.toggle("show");
+        // }
     </script>
+
 </body>
 
 </html>

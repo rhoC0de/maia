@@ -1,7 +1,6 @@
 /* mobile container frame */
 
 * {
-    margin: 0;
     padding: 0;
     margin: 0 auto;
     box-sizing: border-box;
@@ -45,14 +44,21 @@ select, input {
 }
 
 /* Styling Modal Message & btn */
-input[type=submit] {
+.submitbtn {
+    width: 100%;
+    /* cursor: pointer; */
     background-color: #1abc9c;
     color: #ffffff;
-    font-size: 24px;
+    font-size: 28px;
+    font-weight: 600;
     padding: 5px 0px 5px 0px; 
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid #1abc9c;
+    border-radius: 4px;
 }
 
-input[type=submit]:hover {
+.submitbtn:hover {
     background-color: rgb(17, 99, 82);
     color: white;
 }
@@ -108,12 +114,19 @@ h4{
     font-size: 16px;
     font-weight: 500;
 }
-input[type=submit] {
-    font-size: 14px;
+.submitbtn {
+    font-size: 16px;
     font-weight: 600;
     padding: 10px 0 10px 0;
 }
 .below-form{
     font-size: 11px;
+}
+#container {
+    padding: 5% 5%;
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    background-color: #ffffff;
 }
 }

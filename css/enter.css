@@ -19,12 +19,13 @@ body {
     width: 100vw;
     height: 100vh;
     background-color: rgb(26, 188, 156);
+     
 }
 
 #intro {
     color: white;
     text-align: center;
-    margin-top: 6px;
+    margin-top: 35px;
 }
 
 #intro img {
@@ -39,7 +40,7 @@ input {
     box-sizing: border-box;
     border: 2px solid rgb(26, 188, 156);
     border-radius: 4px;
-    font-size:16px;
+    font-size:14px;
 }
 
 p {
