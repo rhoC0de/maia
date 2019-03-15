@@ -36,50 +36,50 @@
 
         <div class="content">
 
-                <form id="add-product-form"> 
-                    <input type="text" name="productname" placeholder="Product Description">
-                    <input type="text" name="discount" placeholder="Discount">
-                    <button>Add product</button>
-                </form>
-    
-                <ul id="product-list"></ul>
-    
-            </div>
+            <form id="add-product-form">
+                <input type="text" name="productname" placeholder="Product Description">
+                <input type="text" name="discount" placeholder="Discount">
+                <button>Add product</button>
+            </form>
+
+            <ul id="product-list"></ul>
+
+        </div>
     </div>
 
 
-<!-- Adding Firebase -->
-<script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyBJscvr64967ykzY2biR5Vn9U-Tob-6ZQY",
-    authDomain: "catalogue-904fc.firebaseapp.com",
-    databaseURL: "https://catalogue-904fc.firebaseio.com",
-    projectId: "catalogue-904fc",
-    storageBucket: "catalogue-904fc.appspot.com",
-    messagingSenderId: "321671902510"
-  };
-  firebase.initializeApp(config);
-  const db = firebase.firestore();
-  db.settings({timestampsInSnapshots: true});
+    <!-- Adding Firebase -->
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyBJscvr64967ykzY2biR5Vn9U-Tob-6ZQY",
+            authDomain: "catalogue-904fc.firebaseapp.com",
+            databaseURL: "https://catalogue-904fc.firebaseio.com",
+            projectId: "catalogue-904fc",
+            storageBucket: "catalogue-904fc.appspot.com",
+            messagingSenderId: "321671902510"
+        };
+        firebase.initializeApp(config);
+        const db = firebase.firestore();
+        db.settings({ timestampsInSnapshots: true });
 
-</script>
+    </script>
 
-<script src="../js/catalogue.js"></script>
+    <script src="../js/catalogue.js"></script>
 
-     <!-- Add all html code above this line -->
-     <script>
-            /*script for topnav dropdown menu*/
-      
-      
-            function openNav() {
-                  document.getElementById("mySidebar").style.width = "250px";
-              }
-      
-              function closeNav() {
-                  document.getElementById("mySidebar").style.width = "0px";
-              }
-      </script>
+    <!-- Add all html code above this line -->
+    <script>
+        /*script for topnav dropdown menu*/
+
+
+        function openNav() {
+            document.getElementById("mySidebar").style.width = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidebar").style.width = "0px";
+        }
+    </script>
 </body>
 
 </html>

@@ -34,80 +34,81 @@
         </section>
 
         <section id="businessInfo">
-                <form id="testform" action="#" onsubmit="return false;">
-                        <p>Business Profile </p>
-                          <input name="bname" id="bname" type="text" placeholder="Business name"> 
-                          <input name="email" type="email" placeholder="Email"> 
-                          <input name="phone" id="phone" type="tel" placeholder="Whatsapp Phone Number"> 
-                          <input name="fbhandle" type="text" placeholder="Facebook handle"> 
-                          <input name="ighandle" type="text" placeholder="Instagram handle"> 
-                          <input name="thandle" type="text" placeholder="Twitter handle"> 
-                        </form>
+            <form id="testform" action="#" onsubmit="return false;">
+                <p>Business Profile </p>
+                <input name="bname" id="bname" type="text" placeholder="Business name">
+                <input name="email" type="email" placeholder="Email">
+                <input name="phone" id="phone" type="tel" placeholder="Whatsapp Phone Number">
+                <input name="fbhandle" type="text" placeholder="Facebook handle">
+                <input name="ighandle" type="text" placeholder="Instagram handle">
+                <input name="thandle" type="text" placeholder="Twitter handle">
+            </form>
 
-                        <p><button id="generate" type="button">Referral link</button> <a href="../promopage.html"><code id="output"></code> </a></p>
+            <p><button id="generate" type="button">Referral link</button> <a href="../promopage.html"><code
+                        id="output"></code> </a></p>
             <div style="text-align:center">
                 <button type="submit" onclick="enableform('testform');">
                     Edit</button>
                 <button type="submit" onclick="disableform('testform');">
                     Save</button>
             </div>
-    </section>
+        </section>
 
-    <!-- Add all html code above this line -->
-    <script>
-        /*script for topnav dropdown menu*/
+        <!-- Add all html code above this line -->
+        <script>
+            /*script for topnav dropdown menu*/
 
 
-        function openNav() {
-            document.getElementById("mySidebar").style.width = "250px";
-        }
+            function openNav() {
+                document.getElementById("mySidebar").style.width = "250px";
+            }
 
-        function closeNav() {
-            document.getElementById("mySidebar").style.width = "0px";
-        }
+            function closeNav() {
+                document.getElementById("mySidebar").style.width = "0px";
+            }
 
-        // script for edit & save buttons
-        function disableform(formId) {
-            var f = document.forms[formId].getElementsByTagName('input');
-            for (var i = 0; i < f.length; i++)
-                f[i].disabled = true
-            var f = document.forms[0].getElementsByTagName('textarea');
-            for (var i = 0; i < f.length; i++)
-                f[i].disabled = true
-        }
+            // script for edit & save buttons
+            function disableform(formId) {
+                var f = document.forms[formId].getElementsByTagName('input');
+                for (var i = 0; i < f.length; i++)
+                    f[i].disabled = true
+                var f = document.forms[0].getElementsByTagName('textarea');
+                for (var i = 0; i < f.length; i++)
+                    f[i].disabled = true
+            }
 
-        function enableform(formId) {
-            var f = document.forms[formId].getElementsByTagName('input');
-            for (var i = 0; i < f.length; i++)
-                f[i].disabled = false
-            var f = document.forms[0].getElementsByTagName('textarea');
-            for (var i = 0; i < f.length; i++)
-                f[i].disabled = false
-        }
+            function enableform(formId) {
+                var f = document.forms[formId].getElementsByTagName('input');
+                for (var i = 0; i < f.length; i++)
+                    f[i].disabled = false
+                var f = document.forms[0].getElementsByTagName('textarea');
+                for (var i = 0; i < f.length; i++)
+                    f[i].disabled = false
+            }
 
-         // script for generating unique link
-         function IDGenerator() {
-            const maia = "maia";
-            var firstName = document.getElementById("bname").value;
-            var phoneDigit = document.getElementById("phone").value;
-            phoneDigitstring = phoneDigit.toString();
-            slicephone = phoneDigitstring.slice(-4);
+            // script for generating unique link
+            function IDGenerator() {
+                const maia = "maia";
+                var firstName = document.getElementById("bname").value;
+                var phoneDigit = document.getElementById("phone").value;
+                phoneDigitstring = phoneDigit.toString();
+                slicephone = phoneDigitstring.slice(-4);
 
-            uniqueID = maia + '//' + firstName + "/" + slicephone;
-            console.log(uniqueID);
-            return uniqueID;
-        }
+                uniqueID = maia + '//' + firstName + "/" + slicephone;
+                console.log(uniqueID);
+                return uniqueID;
+            }
 
-        document.addEventListener("DOMContentLoaded", function () {
-            var btn = document.querySelector("#generate"),
-                output = document.querySelector("#output");
+            document.addEventListener("DOMContentLoaded", function () {
+                var btn = document.querySelector("#generate"),
+                    output = document.querySelector("#output");
 
-            btn.addEventListener("click", function () {
-                output.innerHTML = IDGenerator();
-            }, false);
+                btn.addEventListener("click", function () {
+                    output.innerHTML = IDGenerator();
+                }, false);
 
-        });
-    </script>
+            });
+        </script>
 </body>
 
 </html>
