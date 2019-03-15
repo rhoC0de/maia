@@ -9,8 +9,6 @@
     <meta name="keywords" content="HTML, CSS, XML, JavaScript">
     <meta name="author" content="Maia" />
     <link rel="stylesheet" type="text/css" href="../css/catalogue.css" />
-    <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase-firestore.js"></script>
 
 </head>
 
@@ -25,7 +23,7 @@
                     <a href="profile.html">Profile</a>
                     <a href="catalogue.html">Catalogue</a>
                     <a href="notifications.html">Notifications</a>
-                    <a href="../html/login.html">Logout</a>
+                    <a href="login.html">Logout</a>
                 </div>
                 <div id="main">
                     <button class="openbtn" onclick="openNav()">☰ </button>
@@ -34,52 +32,97 @@
             </div>
         </section>
 
-        <div class="content">
-
-                <form id="add-product-form"> 
-                    <input type="text" name="productname" placeholder="Product Description">
-                    <input type="text" name="discount" placeholder="Discount">
-                    <button>Add product</button>
-                </form>
-    
-                <ul id="product-list"></ul>
-    
-            </div>
+        <section id="myDIV" class="catalogue">
+            <h3 style="margin:5px">Catalogue</h3>
+            <input type="text" id="myInput1" placeholder="Product name...">
+            <input type="text" id="myInput2" placeholder="@Price...">
+            <input type="text" id="myInput3" placeholder="(Reward...)">
+            <span onclick="newElement()" class="addBtn">Add</span>
+        </section>
+        <ul id="myUL">
+            <li>Pure Coconut Oil @$10 (Free delivery)</li>
+            <li>Natural Black Soap @$10 (10% off)</li>
+            <li>Scented Shear Butter @$6 (5% off)</li>
+        </ul>
     </div>
 
 
-<!-- Adding Firebase -->
-<script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyBJscvr64967ykzY2biR5Vn9U-Tob-6ZQY",
-    authDomain: "catalogue-904fc.firebaseapp.com",
-    databaseURL: "https://catalogue-904fc.firebaseio.com",
-    projectId: "catalogue-904fc",
-    storageBucket: "catalogue-904fc.appspot.com",
-    messagingSenderId: "321671902510"
-  };
-  firebase.initializeApp(config);
-  const db = firebase.firestore();
-  db.settings({timestampsInSnapshots: true});
+    <!-- Add all html code above this line -->
+    <script>
+        /*script for topnav dropdown menu*/
 
-</script>
 
-<script src="../js/catalogue.js"></script>
+        function openNav() {
+            document.getElementById("mySidebar").style.width = "250px";
+        }
 
-     <!-- Add all html code above this line -->
-     <script>
-            /*script for topnav dropdown menu*/
-      
-      
-            function openNav() {
-                  document.getElementById("mySidebar").style.width = "250px";
-              }
-      
-              function closeNav() {
-                  document.getElementById("mySidebar").style.width = "0px";
-              }
-      </script>
+        function closeNav() {
+            document.getElementById("mySidebar").style.width = "0px";
+        }
+    </script>
+
+    <script>
+        // Create a "close" button and append it to each list item
+        var myNodelist = document.getElementsByTagName("LI");
+        var i;
+        for (i = 0; i < myNodelist.length; i++) {
+            var span = document.createElement("SPAN");
+            var txt = document.createTextNode("\u00D7");
+            span.className = "close";
+            span.appendChild(txt);
+            myNodelist[i].appendChild(span);
+        }
+
+        // Click on a close button to hide the current list item
+        var close = document.getElementsByClassName("close");
+        var i;
+        for (i = 0; i < close.length; i++) {
+            close[i].onclick = function () {
+                var div = this.parentElement;
+                div.style.display = "none";
+            }
+        }
+
+        // Add a "checked" symbol when clicking on a list item
+        var list = document.querySelector('ul');
+        list.addEventListener('click', function (ev) {
+            if (ev.target.tagName === 'LI') {
+                ev.target.classList.toggle('checked');
+            }
+        }, false);
+
+        // Create a new list item when clicking on the "Add" button
+        function newElement() {
+            var li = document.createElement("li");
+            var inputValue1 = document.getElementById("myInput1").value;
+            var inputValue2 = document.getElementById("myInput2").value;
+            var inputValue3 = document.getElementById("myInput3").value;
+            var t = document.createTextNode(`${inputValue1} ${inputValue2} ${inputValue3}`);
+
+            li.appendChild(t);
+            if (t == '') {
+                alert("You must write something!");
+            } else {
+                document.getElementById("myUL").appendChild(li);
+            }
+            document.getElementById("myInput1").value = "";
+            document.getElementById("myInput2").value = "";
+            document.getElementById("myInput3").value = "";
+
+            var span = document.createElement("SPAN");
+            var txt = document.createTextNode("\u00D7");
+            span.className = "close";
+            span.appendChild(txt);
+            li.appendChild(span);
+
+            for (i = 0; i < close.length; i++) {
+                close[i].onclick = function () {
+                    var div = this.parentElement;
+                    div.style.display = "none";
+                }
+            }
+        }
+    </script>
 </body>
 
 </html>

@@ -22,8 +22,8 @@ body {
     max-width: 100%;
     color: #fff;
     background-color: #1abc9c;
-    padding: 12px 10px;
-    height: 10%;
+    padding: 0px 10px;
+    height: auto;
 }
 
 #main {
@@ -95,94 +95,116 @@ body {
     }
 }
 
-/* Firebase tuts style for form */
-
-.content{
-    background: #fff;
-    max-width: 960px;
-    margin: 30px auto;
-    padding:  20px 30px;
-    border-radius: 10px 120px 10px 10px;
-    box-shadow: 1px 3px 5px rgba(0,0,0,0.1)
-}
-
-ul{
-    list-style-type: none;
-    padding: 0;
-}
-
-li{
-    padding: 20px;
-    background: #f6f6f6;
-    font-size: 16px;
-    color: #555;
-    position: relative;
-    border-bottom: 1px solid #e6e6e6;
-    height: 46px;
-}
-
-li:nth-child(even){
-    padding: 20px;
-    background: #f2f2f2;
-}
-
-li span{
-    display: block;
-}
-
-li span:nth-child(2){
-    font-size: 12px;
-    margin-top: 6px;
-    color: #999;
-}
-
-li div{
-    position: absolute;
-    top: 0;
-    right: 0px;
-    background: rgba(255,255,255,0.6);
-    width: 40px;
-    text-align: center;
-    padding: 10px 0;
-    font-weight:  bold;
-    cursor:  pointer;
-}
-
-form input{
-    float: left;
-    width: 38%;
+/* Remove margins and padding from the list */
+ul {
     margin: 0;
-    border: 0;
-    border-bottom: 1px solid #eee;
-    margin: 0 1%;
-    padding: 10px;
-    display: block;
-    box-sizing: border-box;
-    font-size: 18px;
-}
-
-form input:focus{
-    outline: none;
-    border-bottom: 3px solid #88236f;
-    padding-bottom: 8px;
-    transition: all ease 0.2s;
-}
-
-form:after{
+    padding: 0;
+  }
+  
+  /* Style the list items */
+  ul li {
+    cursor: pointer;
+    position: relative;
+    /* display: block; */
+    padding: 10px 6px 10px 30px;
+    list-style-type: none;
+    background: #eee;
+    font-size: 14px;
+    transition: 0.2s;
+    
+    /* make the list items unselectable */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  /* Set all odd list items to a different color (zebra-stripes) */
+  ul li:nth-child(odd) {
+    background: #f9f9f9;
+  }
+  
+  /* Darker background-color on hover */
+  ul li:hover {
+    background: #ddd;
+  }
+  
+  /* When clicked on, add a background color and strike out text */
+  ul li.checked {
+    background: #888;
+    color: #fff;
+    text-decoration: line-through;
+  }
+  
+  /* Add a "checked" mark when clicked on */
+  ul li.checked::before {
     content: '';
+    position: absolute;
+    border-color: #fff;
+    border-style: solid;
+    border-width: 0 2px 2px 0;
+    top: 10px;
+    left: 16px;
+    transform: rotate(45deg);
+    height: 15px;
+    width: 7px;
+  }
+  
+  /* Style the close button */
+  .close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 10px 14px 10px 14px;
+  }
+  
+  .close:hover {
+    background-color:#1abc9c;
+    color: white;
+  }
+  
+  /* Style the header */
+  .catalogue {
+    background-color: #1abc9c;
+    padding: 20px 30px;
+    color: white;
+    text-align: center;
+  }
+  
+  /* Clear floats after the header */
+  .catalogue:after {
+    content: "";
+    display: table;
     clear: both;
-    display: block;
-}
-
-.content button{
-    border: 0;
-    background: #fff;
-    border-radius: 10px;
-    padding: 13px;
-    width: 14%;
-    box-shadow: -1px 0px 1px rgba(0,0,0,0.1);
-    font-weight: bold;
-    font-family: ubuntu;
-    letter-spacing: 1px;
-    color: #999;
-}
+  }
+  
+  /* Style the input */
+  input {
+      display: block;
+    margin: 6px, 0px;
+    border: 2px solid #1abc9c;
+    border-radius: 5px;
+    width: 75%;
+    padding: 8px;
+    float: left;
+    font-size: 14px;
+  }
+  
+  /* Style the "Add" button */
+  .addBtn {
+    padding: 8px;
+    width: 25%;
+    background: #ffffff;
+    color: #1abc9c;
+    float: right;
+    text-align: center;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.05), 0 3px 10px 0 rgba(0,0,0,0.1);
+  }
+  
+  .addBtn:hover {
+    background-color: #bbb;
+  }

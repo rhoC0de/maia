@@ -9,14 +9,14 @@
 body {
     background-color: white;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
+    margin-top: -1.5vh;
 }
 
 #container {
     padding: 5% 5%;
     display: block;
     width: 100vw;
-    height: 100vh;
+    height: 80vh;
     background-color: #ffffff;
 }
 #intro img{
